@@ -110,7 +110,7 @@ const promptUser = data => {
     promptUser()
     .then(data => generateTemplate(data))
     .then(generateTemplate => {
-        fs.writeFile('README.md', generateTemplate, err => {
+        fs.writeFile('./dist/README.md', generateTemplate, err => {
             if (err) throw err
         })
     })

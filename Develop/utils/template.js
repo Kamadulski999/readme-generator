@@ -3,42 +3,52 @@ const generateTemplate = templateData => {
     const {title, description, install, contribution, usage, licenses, email, github} = templateData; 
     
 
-var licenseString = ""
-var licenseNav = ""
-var licenseGenerator = function() {
+// generate license badges and license section of readme document if needed
+let licenseString = "This project is covered under the following open source licenses:<br>"
+let licenseNav = ""
+let licenseBadge = ""
+
+let licenseGenerator = function() {
     if(licenses.includes('APACHE')) {
-        licenseString += "APACHE "        
+        licenseString += "[APACHE 2.0](https://opensource.org/licenses/Apache-2.0)<br>" 
+        licenseBadge = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) "       
     }
     if(licenses.includes('MIT')) {
-        licenseString += "MIT "        
+        licenseString += "[MIT](https://opensource.org/licenses/MIT)<br>"
+        licenseBadge += "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) "         
     }
     if(licenses.includes('MOZILLA')) {
-        licenseString += "MOZILLA "        
+        licenseString += "[MOZILLA 2.0](https://opensource.org/licenses/MPL-2.0)<br>"       
+        licenseBadge += "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0) " 
     }
     if(licenses.includes('PERL')) {
-        licenseString += "PERL "        
+        licenseString += "[PERL 2.0](https://opensource.org/licenses/Artistic-2.0)<br>"
+        licenseBadge += "[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0) "        
     }
     if(licenses.includes('ISC')) {
-        licenseString += "ISC "        
+        licenseString += "[ISC   ](https://opensource.org/licenses/ISC)<br>"  
+        licenseBadge += "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC) "      
     }
     if(licenses.includes('IBM')) {
-        licenseString += "IBM "        
+        licenseString += "[IBM 1.0](https://opensource.org/licenses/IPL-1.0)<br>"
+        licenseBadge += "[![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)"        
     }  
     if(licenseString) {
-        licenseNav = "- [Licenses](#licenses)"
+        licenseNav = "- [License](#license)"
     }
    
 }
-
 licenseGenerator(licenses)
 
-console.log(licenseString)
+
    
 return `
 # ${title}
 
 ## Description
-${description}
+${description} 
+
+${licenseBadge}
 
 ## Table of Contents 
 - [Installation](#installation)
