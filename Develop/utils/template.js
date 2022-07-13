@@ -74,7 +74,7 @@ ${licenseString}
 ## Questions
 If you have any questions regarding this project please feel free to contact via [EMAIL](${email})
 
-You can also find more of my projects on [GitHub]('https://www.github.com/'${github}) 
+You can also find more of my projects on [GitHub](https://www.github.com/${github}) 
 
 `
 }

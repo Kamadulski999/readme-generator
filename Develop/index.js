@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
 const fs = require('fs')
-const generateMarkdown = require('./utils/generateMarkdown');
 const generateTemplate = require('./utils/template');
 
 // this function creates the questions for the command line user prompts and returns the answers in a data object
