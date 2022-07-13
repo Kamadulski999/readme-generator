@@ -1,12 +1,9 @@
 const inquirer = require('inquirer');
+const fs = require('fs')
+const generateMarkdown = require('./utils/generateMarkdown');
+const generateTemplate = require('./utils/template');
 
-// // TODO: Create an array of questions for user input
-// const questions = [];
-// var commandLineArgs = process.argv;
-// console.log(commandLineArgs);
-// var readmeDataArgs = process.argv.slice(2, process.argv.length);
-// console.log(readmeDataArgs);
-
+// this function creates the questions for the command line user prompts and returns the answers in a data object
 const promptUser = data => {
     return inquirer.prompt([      
     {
@@ -110,17 +107,17 @@ const promptUser = data => {
     ]);
   };
 
+    promptUser()
+    .then(data => generateTemplate(data))
+    .then(generateTemplate => {
+        fs.writeFile('README.md', generateTemplate, err => {
+            if (err) throw err
+        })
+    })
 
-promptUser().then((data)=> console.log(data))
+  
 
-// console.log(data.title)
+  
 
 
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
 
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
