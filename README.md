@@ -23,4 +23,4 @@ WHEN I click on the links in the Table of Contents <br>
 THEN I am taken to the corresponding section of the README
 
 # Demonstration 
-[See a video demonstration](https://drive.google.com/file/d/1YzXrIkoywdyDSB0LTA4pOu_bOEZbVdRk/view?usp=sharing)
+[![image](./readme.jpg)](https://drive.google.com/file/d/1YzXrIkoywdyDSB0LTA4pOu_bOEZbVdRk/view?usp=sharing)
